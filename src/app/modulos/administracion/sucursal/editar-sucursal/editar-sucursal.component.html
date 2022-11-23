@@ -1,0 +1,31 @@
+<div class="modal">
+  <h4>Editar producto</h4>
+
+  <form [formGroup]="fgValidador" class="example-form" (ngSubmit)="modificarSucursal()" >
+
+  <p>
+
+
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Departamento</mat-label>
+      <input formControlName="departamento" matInput  autocomplete="off" >
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Ciudad</mat-label>
+      <input formControlName="ciudad" matInput  autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Direccion</mat-label>
+      <input formControlName="direccion" matInput  autocomplete="off">
+    </mat-form-field>
+
+
+  <button type="submit" [disabled]="!fgValidador.valid"   mat-raised-button color="primary">Actualizar sucursal</button>
+
+</form>
+</div>
+

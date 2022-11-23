@@ -1,0 +1,46 @@
+
+<div class="modal">
+  <h4>Crear producto</h4>
+
+  <form [formGroup]="fgValidador" class="example-form" (ngSubmit)="registrarProducto()" >
+
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Tipo</mat-label>
+      <mat-select formControlName="tipo">
+        <mat-option value="Producto">Producto</mat-option>
+        <mat-option value="Servicio" >Servicio</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre</mat-label>
+      <input formControlName="nombre" matInput  autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Precio</mat-label>
+      <input formControlName="precio" matInput type="number" autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Descripcion</mat-label>
+      <input formControlName="descripcion" matInput  autocomplete="off">
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Proveedor</mat-label>
+      <input formControlName="proveedor" matInput  autocomplete="off">
+    </mat-form-field>
+
+
+
+  </p>
+
+  <button type="submit" [disabled]="!fgValidador.valid"   mat-raised-button color="primary">Crear producto</button>
+
+</form>
+
+
+</div>

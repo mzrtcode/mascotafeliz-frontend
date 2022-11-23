@@ -1,0 +1,71 @@
+
+<div class="bg-gradient-primary body">
+  <br>
+  <br>
+        <div class="container">
+
+            <div class="card o-hidden border-0 shadow-lg ">
+                <div class="card-body p-0 ">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+                        <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                        <div class="col-lg-7">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Registrate!</h1>
+                                </div>
+                                <form [formGroup]="fgValidador" class="example-form user" (ngSubmit)="registrarUsuario()" >
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                          <mat-form-field class="example-full-width">
+                                            <mat-label>Nombres</mat-label>
+                                            <input formControlName="nombres" matInput  autocomplete="off">
+                                          </mat-form-field>
+                                        </div>
+                                        <div class="col-sm-6">
+                                          <mat-form-field class="example-full-width">
+                                            <mat-label>Apellidos</mat-label>
+                                            <input formControlName="apellidos" matInput  autocomplete="off">
+                                          </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <mat-form-field class="example-full-width">
+                                        <mat-label>Correo</mat-label>
+                                        <input formControlName="correo" type="email" matInput  autocomplete="off">
+                                      </mat-form-field>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                          <mat-form-field class="example-full-width">
+                                            <mat-label>Documento</mat-label>
+                                            <input formControlName="documento" type="number" matInput  autocomplete="off">
+                                          </mat-form-field>
+                                        </div>
+                                        <div class="col-sm-6">
+                                          <mat-form-field class="example-full-width">
+                                            <mat-label>Telefono</mat-label>
+                                            <input formControlName="telefono" type="number" matInput  autocomplete="off">
+                                          </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <button type="submit" [disabled]="!fgValidador.valid" class="ancho"   mat-raised-button color="primary">Registrarse</button>
+
+
+                                </form>
+                                <hr>
+                                <div class="text-center">
+                                    <a class="small" href="/seguridad/recuperar-clave">Olvidaste tu constraseña</a>
+                                </div>
+                                <div class="text-center">
+                                    <a class="small" href="/seguridad/login">¿Ya tienes una cuenta? Inicia sesión!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+

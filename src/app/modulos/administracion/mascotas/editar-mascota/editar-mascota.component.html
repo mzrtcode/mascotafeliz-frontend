@@ -1,0 +1,41 @@
+<div class="modal">
+  <h4>Editar mascota</h4>
+
+  <form [formGroup]="fgValidador" class="example-form" (ngSubmit)="modificarMascota()" >
+
+  <p>
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre</mat-label>
+      <input formControlName="nombre" matInput  autocomplete="off" >
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Foto</mat-label>
+      <input formControlName="foto" matInput autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Especie</mat-label>
+      <input formControlName="especie" matInput  autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Estado afiliacion</mat-label>
+      <mat-select formControlName="estadoAfiliacion">
+        <mat-option value="Activo">Activo</mat-option>
+        <mat-option value="Inactivo" >Inactivo</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+
+
+  </p>
+
+  <button type="submit" [disabled]="!fgValidador.valid"   mat-raised-button color="primary">Actualizar usuario</button>
+
+</form>
+</div>
+

@@ -1,0 +1,82 @@
+<mat-card>
+  <mat-card-content>
+    <mat-card-title>
+      <i class="fa-solid fa-star"></i>Mascotas
+      <button mat-raised-button color="primary" (click)="nuevoMascota()">Nuevo</button>
+
+    </mat-card-title>
+
+
+
+    <mat-form-field>
+      <mat-label>Filtrar</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input autocomplete="off">
+    </mat-form-field>
+
+
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSourceAPI" >
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let element; let i = index"> {{i+1}} </td>
+        </ng-container>
+
+
+        <!-- Nombres Column -->
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef> Nombre </th>
+          <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+        </ng-container>
+
+        <!-- Apellidos Column -->
+        <ng-container matColumnDef="foto">
+          <th mat-header-cell *matHeaderCellDef> Foto </th>
+          <td mat-cell *matCellDef="let element"> {{element.foto}} <img class="mascota"  src="https://media.istockphoto.com/photos/crazy-looking-black-and-white-border-collie-dog-say-looking-intently-picture-id1213516345?b=1&k=20&m=1213516345&s=612x612&w=0&h=Nw0QSlgjmF5VUDCm67rlvW0mtLfbu0gqMruolP-PS-A=" alt="">
+          </td>
+
+        </ng-container>
+
+        <!-- Email Column -->
+        <ng-container matColumnDef="especie">
+          <th mat-header-cell *matHeaderCellDef> Especie </th>
+          <td mat-cell *matCellDef="let element"> {{element.especie}} </td>
+        </ng-container>
+
+        <!-- Telefono	 Column -->
+        <ng-container matColumnDef="estadoAfiliacion">
+          <th mat-header-cell *matHeaderCellDef> Estado Afiliacion </th>
+          <td mat-cell *matCellDef="let element"> {{element.estadoAfiliacion}} </td>
+        </ng-container>
+
+        <!-- Acciones Column -->
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let element; " >
+            <a class="cursor-pointer" (click)="actualizarMascota(element)"  style="color: darkslateblue;" matTooltip="Editar mascota">
+              <mat-icon>edit</mat-icon>
+            </a>
+            <a class="cursor-pointer" (click)="eliminarMascota(element)" style="color: crimson;" matTooltip="Eliminar mascota">
+              <mat-icon >delete</mat-icon>
+            </a>
+
+          </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+
+
+
+  </mat-card-content>
+</mat-card>
+

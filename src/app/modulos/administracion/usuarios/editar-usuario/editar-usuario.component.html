@@ -1,0 +1,47 @@
+<div class="modal">
+  <h4>Editar usuario</h4>
+
+  <form [formGroup]="fgValidador" class="example-form" (ngSubmit)="modificarUsuario()" >
+
+  <p>
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombres</mat-label>
+      <input formControlName="nombre" matInput  autocomplete="off" >
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Apellidos</mat-label>
+      <input formControlName="apellido" matInput  autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Documento</mat-label>
+      <input formControlName="documento" matInput  autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Correo</mat-label>
+      <input formControlName="correo" type="email" matInput  autocomplete="off">
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Telefono</mat-label>
+      <input formControlName="telefono" matInput  autocomplete="off">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Rol</mat-label>
+      <mat-select formControlName="rol">
+        <mat-option value="Cliente">Cliente</mat-option>
+        <mat-option value="Administrador" >Administrador</mat-option>
+        <mat-option value="Asesor">Asesor</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+
+  <button type="submit" [disabled]="!fgValidador.valid"   mat-raised-button color="primary">Actualizar usuario</button>
+
+</form>
+</div>

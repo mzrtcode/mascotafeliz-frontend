@@ -1,0 +1,36 @@
+
+<div class="modal">
+  <h4>Registro mascota</h4>
+
+  <form [formGroup]="fgValidador" class="example-form" (ngSubmit)="registrarMascota()" >
+
+  <p>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre</mat-label>
+      <input formControlName="nombre" matInput  autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Foto</mat-label>
+      <input formControlName="foto" matInput  autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Especie</mat-label>
+      <input formControlName="especie" matInput  autocomplete="off">
+    </mat-form-field>
+
+
+
+
+
+
+  </p>
+
+  <button type="submit" [disabled]="!fgValidador.valid"   mat-raised-button color="primary">Registrar mascota</button>
+
+</form>
+
+
+</div>

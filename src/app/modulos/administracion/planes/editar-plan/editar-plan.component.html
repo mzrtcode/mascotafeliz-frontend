@@ -1,0 +1,33 @@
+
+<div class="modal">
+  <h4>Editar plan</h4>
+
+  <form [formGroup]="fgValidador" class="example-form" (ngSubmit)="editarPlan()" >
+
+  <p>
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre</mat-label>
+      <input formControlName="nombre" matInput  autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Descripcion</mat-label>
+      <input formControlName="descripcion" matInput  autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Precio</mat-label>
+      <input formControlName="precio" matInput type="number" autocomplete="off">
+    </mat-form-field>
+
+
+ </p>
+
+  <button type="submit" [disabled]="!fgValidador.valid"   mat-raised-button color="primary">Actualizar producto</button>
+
+</form>
+
+
+</div>
